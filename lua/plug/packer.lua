@@ -24,9 +24,9 @@ return packer.startup(function(use)
   use { 'windwp/nvim-autopairs' }               -- auto pairs
   use { 'wbthomason/packer.nvim' }              -- plugin manager
   use { 'akinsho/toggleterm.nvim' }             -- terminal
+  use { 'nvim-tree/nvim-tree.lua' }             -- file tree
   use { 'akinsho/bufferline.nvim' }             -- buffers
   use { 'lewis6991/impatient.nvim' }            -- quick plugin loader
-  use { 'kyazdani42/nvim-tree.lua' }            -- file tree
   use { 'nvim-lualine/lualine.nvim' }           -- status line
   use { 'norcalli/nvim-colorizer.lua' }         -- coloring 
   use { 'kyazdani42/nvim-web-devicons' }        -- dev icons
