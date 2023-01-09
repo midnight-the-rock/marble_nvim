@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_map
+local map = vim.api.nvim_set_keymap
 local conf = { noremap = true, silent = true }
 
 local M = {}
@@ -32,8 +32,8 @@ M.setup = function()
   map("v", ">", ">gv", conf)
 
   -- INSERT
-  map("i", "<fj>", "<ESC>", conf)
-  map("i", "<jf>", "<ESC>", conf)
+  map("i", "fj", "<ESC>", conf)
+  map("i", "jf", "<ESC>", conf)
 end
 
 return M
