@@ -22,8 +22,8 @@ M.setup = function()
   map("n", "<C-Right>", ":vertical resize +2<CR>", conf)
   map("n", "<S-l>", ":bnext<CR>", conf)
   map("n", "<S-h>", ":bprevious<CR>", conf)
-  map("n", "<S-t>", ":ToggleTerm<CR>", conf)
-  map("n", "<S-f>", ":NvimTreeToggle<CR>", conf)
+  map("n", "<C-t>", ":ToggleTerm<CR>", conf)
+  map("n", "<C-f>", ":NvimTreeToggle<CR>", conf)
 
   -- VISUAL
   map("v", "jf", "<ESC>", conf)
