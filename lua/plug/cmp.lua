@@ -6,14 +6,14 @@ local bordered = cmp.config.window.bordered()
 
 local M = {}
 
-local icons = 
+local icon_kind = 
 {
   Text =          "", Unit =          "", Enum =          "",
   File =          "", Color =         "", Value =         "",
   Event =         "", Class =         "", Struct =        "",
   Method =        "", Folder =        "", Module =        "",
   Keyword =       "", Snippet =       "", Variable =      "",
-  Function =      "ﬦ", Operator =      "", Constant =      "",
+  Function =      "", Operator =      "", Constant =      "",
   Property =      "", Reference =     "", Interface =     "",
   EnumMember =    "", Constructor =   "", TypeParameter = "",
 }
@@ -53,7 +53,7 @@ M.formatting =
       luasnip = "[snip]",
       nvim_lsp = "[lsp]",
     })[entry.source.name]
-    vim_item.kind = string.format("%s", incons[vim_item.kind])
+    vim_item.kind = string.format("%s", icon_kind[vim_item.kind])
     return vim_item
   end,
 }
