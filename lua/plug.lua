@@ -4,6 +4,7 @@ M.setup = function()
   require("impatient")
 
   require("plug.cmp")
+  require("plug.lsp")
   require("plug.alpha")
   require("plug.packer")
   require("plug.lualine")

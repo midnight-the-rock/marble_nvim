@@ -21,6 +21,7 @@ return packer.startup(function(use)
   -- useful plugins
   use { 'elkowar/yuck.vim' }                    -- eww sintax hl
   use { 'goolord/alpha-nvim' }                  -- menu
+  use { 'nvim-lua/plenary.nvim' }               -- file tree
   use { 'windwp/nvim-autopairs' }               -- auto pairs
   use { 'wbthomason/packer.nvim' }              -- plugin manager
   use { 'akinsho/toggleterm.nvim' }             -- terminal
