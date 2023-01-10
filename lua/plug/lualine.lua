@@ -50,7 +50,7 @@ M.options =
   icons_enabled = true,
   always_divide_middle = true,
   section_separators = { left = '▙ ', right = ' ▟'},
-  component_separators = { left = ' ▏', right = ' ▏'},
+  component_separators = { left = '┃', right = '┃'},
   refresh = { statusline = 1000, tabline = 1000, winbar = 1000 },
   disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", statusline = {}, winbar = {}, },
 }
