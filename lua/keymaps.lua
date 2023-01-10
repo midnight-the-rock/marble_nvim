@@ -34,6 +34,10 @@ M.setup = function()
   -- INSERT
   map("i", "fj", "<ESC>", conf)
   map("i", "jf", "<ESC>", conf)
+  
+  -- TERMINAL
+  map("t", "fj", "exit<CR>", conf)
+  map("t", "jf", "exit<CR>", conf)
 end
 
 return M
