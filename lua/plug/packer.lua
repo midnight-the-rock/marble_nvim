@@ -18,7 +18,7 @@ return packer.startup(function(use)
   use { 'williamboman/nvim-lsp-installer' }
   use { 'jose-elias-alvarez/null-ls.nvim' }
 
-  -- useful plugins
+ -- useful plugins
   use { 'elkowar/yuck.vim' }                    -- eww sintax hl
   use { 'goolord/alpha-nvim' }                  -- menu
   use { 'nvim-lua/plenary.nvim' }               -- file tree
