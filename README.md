@@ -11,8 +11,9 @@ starry.nvim is a neovim template, offers the basics for a cozy and solid develop
 
 ## [📦] installation
 
+#### copy and run the installation script
 ```sh
-bash <(curl -S https://github.com/TheMidnightShow/starry.nvim/install.sh)
+bash <(curl -S https://raw.githubusercontent.com/TheMidnightShow/starry.nvim/master/install.sh) 
 ```
 
 ## [📺] preview
