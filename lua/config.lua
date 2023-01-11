@@ -3,9 +3,9 @@ local key = require("keymaps")
 local env = require("environment")
 
 local M = {
-  plg.setup(), -- load plugins
   key.setup(), -- load keymaps
   env.setup(), -- load environment
+  plg.setup(), -- load plugins
 
   -- load colorscheme
   vim.cmd("colorscheme starry_nebula")

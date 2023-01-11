@@ -1,20 +1,20 @@
 local M = {}
 
 M.setup = function()
-  require("plug.packer")
+  require("plugins.plugins")
 
   require("impatient")
 
-  require("plug.cmp")
-  require("plug.lsp")
-  require("plug.alpha")
-  require("plug.lualine")
-  require("plug.nvimtree")
-  require("plug.autopairs")
-  require("plug.treesitter")
-  require("plug.toggleterm")
-  require("plug.indentline")
-  require("plug.bufferline")
+  require("plugins.cmp")
+  require("plugins.lsp")
+  require("plugins.alpha")
+  require("plugins.lualine")
+  require("plugins.nvimtree")
+  require("plugins.autopairs")
+  require("plugins.treesitter")
+  require("plugins.toggleterm")
+  require("plugins.indentline")
+  require("plugins.bufferline")
   require("colorizer")
   require("telescope").setup()
 end

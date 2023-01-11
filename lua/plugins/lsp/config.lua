@@ -13,8 +13,8 @@ lsp_installer.setup({
 
 for _, server in pairs(servers) do
 	local opts = {
-		on_attach = require("plug.lsp.handler").on_attach,
-		capabilities = require("plug.lsp.handler").capabilities,
+		on_attach = require("plugins.lsp.handler").on_attach,
+		capabilities = require("plugins.lsp.handler").capabilities,
 	}
 	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
 	if has_custom_opts then
