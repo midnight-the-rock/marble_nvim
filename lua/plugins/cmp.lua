@@ -6,7 +6,7 @@ local bordered = cmp.config.window.bordered()
 
 local M = {}
 
-local icon_kind = 
+local icon_kind =
 {
   Text =          "", Unit =          "", Enum =          "",
   File =          "", Color =         "", Value =         "",
@@ -18,18 +18,20 @@ local icon_kind =
   EnumMember =    "", Constructor =   "", TypeParameter = "",
 }
 
-M.snippet = 
+M.snippet =
 {
   expand = function(args)
     luasnip.lsp_expand(args.body)
   end,
 }
 
-M.mapping = 
-{ 
+M.mapping =
+{
   -- navigation
   ["<Tab>"] = cmp.mapping.select_next_item(),
   ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+  ["<C-j>"] = cmp.mapping.select_next_item(),
+  ["<C-k>"] = cmp.mapping.select_prev_item(),
   ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
   ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
 
@@ -42,11 +44,11 @@ M.mapping =
   ["<C-e>"] = cmp.mapping { i = cmp.mapping.abort(), c = cmp.mapping.close(), },
 }
 
-M.formatting = 
+M.formatting =
 {
   fields = { "kind", "abbr", "menu" },
   format = function(entry, vim_item)
-    vim_item.menu = 
+    vim_item.menu =
     ({
       path = "[pth]",
       buffer = "[buf]",
@@ -57,22 +59,22 @@ M.formatting =
     return vim_item
   end,
 }
-  
-M.sources = 
+
+M.sources =
 {
   { name = "nvim_lsp" },
   { name = "luasnip" },
   { name = "buffer" },
   { name = "path" }
 }
-  
-M.confirm_opts = 
+
+M.confirm_opts =
 {
   behavior = cmp.ConfirmBehavior.Replace,
   select = false,
 }
 
-M.window = 
+M.window =
 {
   completion = bordered,
   documentation = bordered,
