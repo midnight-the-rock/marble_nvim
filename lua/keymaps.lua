@@ -10,6 +10,10 @@ M.keys =
   { "n", "<C-q>", ":q!<CR>" },
   { "n", "<C-q>", ":wq!<CR>" },
 
+  -- code chunk navigation
+  { "n", "<S-k>", "{" },
+  { "n", "<S-j>", "}" },
+
   -- window navigation 
   { "n", "<C-k>", "<C-w>k" },
   { "n", "<C-j>", "<C-w>j" },
