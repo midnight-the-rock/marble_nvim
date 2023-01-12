@@ -3,41 +3,54 @@ local conf = { noremap = true, silent = true }
 
 local M = {}
 
+M.keys =
+{
+  -- file manipulation
+  { "n", "<C-s>", ":w!<CR>" },
+  { "n", "<C-q>", ":q!<CR>" },
+  { "n", "<C-q>", ":wq!<CR>" },
+
+  -- window navigation 
+  { "n", "<C-k>", "<C-w>k" },
+  { "n", "<C-j>", "<C-w>j" },
+  { "n", "<C-h>", "<C-w>h" },
+  { "n", "<C-l>", "<C-w>l" },
+
+  -- window splitting
+  { "n", "<C-v>", "<C-w>v" },
+  { "n", "<C-b>", "<C-w>s" },
+
+  -- window resize
+  { "n", "<C-Up>", ":resize -2<CR>" },
+  { "n", "<C-Down>", ":resize +2<CR>" },
+  { "n", "<C-Left>", ":vertical resize -2<CR>" },
+  { "n", "<C-Right>", ":vertical resize +2<CR>" },
+
+  -- buffer navigation
+  { "n", "<S-l>", ":bnext<CR>" },
+  { "n", "<S-h>", ":bprevious<CR>" },
+
+  -- quick mode exit 
+  { "i", "fj", "<ESC>" },
+  { "i", "jf", "<ESC>" },
+  { "v", "jf", "<ESC>" },
+  { "v", "fj", "<ESC>" },
+  { "t", "fj", "exit<CR>" },
+  { "t", "jf", "exit<CR>" },
+
+  -- indentation
+  { "v", "<", "<gv" },
+  { "v", ">", ">gv" },
+
+  -- plugin
+  { "n", "<C-t>", ":ToggleTerm<CR>" },
+  { "n", "<C-f>", ":NvimTreeToggle<CR>" },
+}
+
 M.setup = function()
-  -- NORMAL
-  map("n", "<C-s>", ":w <CR>", conf)
-  map("n", "<C-q>", ":wq <CR>", conf)
-  map("n", "<C-p>", ":q! <CR>", conf)
-  map("n", "<S-k>", "{", conf)
-  map("n", "<S-j>", "}", conf)
-  map("n", "<C-h>", "<C-w>h", conf)
-  map("n", "<C-j>", "<C-w>j", conf)
-  map("n", "<C-k>", "<C-w>k", conf)
-  map("n", "<C-l>", "<C-w>l", conf)
-  map("n", "<C-v>", "<C-w>v", conf)
-  map("n", "<C-b>", "<C-w>s", conf)
-  map("n", "<C-Up>", ":resize -2<CR>", conf)
-  map("n", "<C-Down>", ":resize +2<CR>", conf)
-  map("n", "<C-Left>", ":vertical resize -2<CR>", conf)
-  map("n", "<C-Right>", ":vertical resize +2<CR>", conf)
-  map("n", "<S-l>", ":bnext<CR>", conf)
-  map("n", "<S-h>", ":bprevious<CR>", conf)
-  map("n", "<C-t>", ":ToggleTerm<CR>", conf)
-  map("n", "<C-f>", ":NvimTreeToggle<CR>", conf)
-
-  -- VISUAL
-  map("v", "jf", "<ESC>", conf)
-  map("v", "fj", "<ESC>", conf)
-  map("v", "<", "<gv", conf)
-  map("v", ">", ">gv", conf)
-
-  -- INSERT
-  map("i", "fj", "<ESC>", conf)
-  map("i", "jf", "<ESC>", conf)
-
-  -- TERMINAL
-  map("t", "fj", "exit<CR>", conf)
-  map("t", "jf", "exit<CR>", conf)
+  for _, v in pairs(M.keys) do
+    map(v[1], v[2], v[3], conf)
+  end
 end
 
 return M
