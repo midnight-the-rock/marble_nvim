@@ -1,9 +1,9 @@
 local ok, alpha = pcall(require, "alpha")
 if not ok then
-  return 0
+  return
 end
 
-local dashboard = require("alpha.themes.dashboard")
+local _, dashboard = pcall(require,"alpha.themes.dashboard")
 
 -- menu title
 dashboard.section.header.val =
