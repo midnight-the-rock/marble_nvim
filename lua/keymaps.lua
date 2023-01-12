@@ -46,9 +46,9 @@ M.keys =
   { "v", "<", "<gv" },
   { "v", ">", ">gv" },
 
-  -- plugin
-  { "n", "<C-t>", ":ToggleTerm<CR>" },
-  { "n", "<C-f>", ":NvimTreeToggle<CR>" },
+  -- lazy load plugin
+  { "n", "<C-t>", ":lua require('plugins.toggleterm'); vim.cmd[[ ToggleTerm ]]<CR>" },
+  { "n", "<C-f>", ":lua require('plugins.nvimtree'); vim.cmd[[ NvimTreeToggle ]]<CR>" },
 }
 
 M.setup = function()
