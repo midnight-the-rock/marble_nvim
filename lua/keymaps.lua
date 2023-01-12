@@ -1,9 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local conf = { noremap = true, silent = true }
 
-local M = {}
-
-M.keys =
+local keys =
 {
   -- file manipulation
   { "n", "<C-s>", ":w!<CR>" },
@@ -51,10 +49,10 @@ M.keys =
   { "n", "<C-f>", ":lua require('plugins.nvimtree'); vim.cmd[[ NvimTreeToggle ]]<CR>" },
 }
 
-M.setup = function()
-  for _, v in pairs(M.keys) do
+local setup = function()
+  for _, v in pairs(keys) do
     map(v[1], v[2], v[3], conf)
   end
 end
 
-return M
+return setup()

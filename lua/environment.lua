@@ -1,6 +1,4 @@
-local M = {}
-
-M.options =
+local options =
 {
   { "wrap", false },
   { "number", true },
@@ -38,10 +36,10 @@ M.options =
   { "completeopt", { "menuone", "noselect" } },
 }
 
-M.setup = function()
-  for _, v in pairs(M.options) do
+local setup = function()
+  for _, v in pairs(options) do
     vim.opt[v[1]] = v[2]
   end
 end
 
-return M
+return setup()
