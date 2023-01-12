@@ -1,13 +1,14 @@
-local M = {}
-
-M.setup = function()
+local loader = function()
+  require("impatient")
   require("plugins.plugins")
 
-  require("impatient")
+  -- load menu only if buffer is empty
+  if vim.fn.bufname() == "" then
+    require("plugins.alpha")
+  end
 
   require("plugins.cmp")
   require("plugins.lsp")
-  require("plugins.alpha")
   require("plugins.lualine")
   require("plugins.nvimtree")
   require("plugins.autopairs")
@@ -15,8 +16,6 @@ M.setup = function()
   require("plugins.toggleterm")
   require("plugins.indentline")
   require("plugins.bufferline")
-  require("colorizer")
-  require("telescope").setup()
 end
 
-return M
+return loader()
