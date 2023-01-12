@@ -7,7 +7,7 @@ M.keys =
 {
   -- file manipulation
   { "n", "<C-s>", ":w!<CR>" },
-  { "n", "<C-q>", ":q!<CR>" },
+  { "n", "<C-p>", ":q!<CR>" },
   { "n", "<C-q>", ":wq!<CR>" },
 
   -- code chunk navigation
