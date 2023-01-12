@@ -18,7 +18,6 @@ vim.cmd([[
 
 -- first usage guard 
 local ok, packer = pcall(require, "packer")
-
 if not ok then
   return
 end

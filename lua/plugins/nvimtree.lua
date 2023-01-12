@@ -1,18 +1,21 @@
-local nvim_tree = require("nvim-tree")
+local ok, nvim_tree = pcall(require,"nvim-tree")
+if not ok then
+  return 0
+end
 
 local M = {}
 
 M.update_focused_file = { enable = true, update_cwd = true, }
 
-M.renderer = 
+M.renderer =
 {
   root_folder_modifier = ":t",
   icons = {
-    glyphs = 
+    glyphs =
     {
       default = "",
       symlink = "",
-      folder = 
+      folder =
       {
         arrow_open = "",
         arrow_closed = "",
@@ -23,7 +26,7 @@ M.renderer =
         symlink = "",
         symlink_open = "",
       },
-      git = 
+      git =
       {
         unstaged = "",
         staged = "",

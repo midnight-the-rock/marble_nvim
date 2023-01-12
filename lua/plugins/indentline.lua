@@ -1,6 +1,9 @@
-local indent = require("indent_blankline")
+local ok, indent = pcall(require, "indent_blankline")
+if not ok then
+  return 0
+end
 
-local M = 
+local M =
 {
   show_end_of_line = false,
   show_current_context = true,

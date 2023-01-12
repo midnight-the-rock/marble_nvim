@@ -1,4 +1,7 @@
-local bufferline = require("bufferline")
+local ok, bufferline = pcall(require,"bufferline")
+if not ok then
+  return 0
+end
 
 local M = {}
 

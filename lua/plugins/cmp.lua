@@ -1,8 +1,12 @@
-require("luasnip/loaders/from_vscode").lazy_load()
+local ok, cmp = pcall(require,"cmp")
+if not ok then
+  return 0
+end
 
-local cmp = require("cmp")
 local luasnip = require("luasnip")
 local bordered = cmp.config.window.bordered()
+
+require("luasnip/loaders/from_vscode").lazy_load()
 
 local M = {}
 

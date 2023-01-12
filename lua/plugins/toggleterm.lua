@@ -1,4 +1,7 @@
-local toggleterm = require("toggleterm")
+local ok, toggleterm = pcall(require,"toggleterm")
+if not ok then
+  return 0
+end
 
 local M =
 {
@@ -14,7 +17,7 @@ local M =
 	shade_terminals = true,
 	start_in_insert = true,
 	insert_mappings = true,
-	float_opts = 
+	float_opts =
   {
 		winblend = 0,
 	  border = "single",

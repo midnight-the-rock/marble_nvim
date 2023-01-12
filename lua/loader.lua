@@ -1,11 +1,12 @@
 local loader = function()
-  require("impatient")
+  pcall(require, "impatient")
   require("plugins.plugins")
 
   -- load menu only if buffer is empty
   if vim.fn.bufname() == "" then
     require("plugins.alpha")
   end
+
   require("plugins.cmp")
   require("plugins.lsp")
   require("plugins.lualine")

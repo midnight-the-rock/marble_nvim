@@ -1,4 +1,3 @@
-
 -- load an alernative background 
 local ok = pcall(vim.cmd, 'colorscheme starry_nebula')
 if not ok then

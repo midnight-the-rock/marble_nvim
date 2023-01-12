@@ -1,4 +1,8 @@
-local alpha = require("alpha")
+local ok, alpha = pcall(require, "alpha")
+if not ok then
+  return 0
+end
+
 local dashboard = require("alpha.themes.dashboard")
 
 -- menu title
@@ -32,4 +36,4 @@ dashboard.section.buttons.opts.hl = "Keyword"
 dashboard.section.footer.opts.hl =  "Keyword"
 
 -- setup
-alpha.setup(dashboard.opts)
+return alpha.setup(dashboard.opts)
