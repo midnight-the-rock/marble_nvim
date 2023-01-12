@@ -63,6 +63,7 @@ return packer.startup({
     -- sync packer whenever this file gets updated 
     if Bootstrap then
       require("packer").sync()
+      print("installing plugins: press <C-p> twice when ready")
     end
   end,
 
