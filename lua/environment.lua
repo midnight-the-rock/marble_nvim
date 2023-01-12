@@ -1,44 +1,47 @@
-local opt = function(name, value)
-  vim.opt[name] = value
-end
-
 local M = {}
 
+M.options =
+{
+  { "wrap", false },
+  { "number", true },
+  { "backup", false },
+  { "hlsearch", true },
+  { "undofile", true },
+  { "swapfile", false },
+  { "showmode", false },
+  { "expandtab", true },
+  { "smartcase", true },
+  { "cursorline", true },
+  { "splitbelow", true },
+  { "ignorecase", true },
+  { "splitright", true },
+  { "smartindent", true },
+  { "writebackup", false },
+  { "relativenumber", true },
+
+  { "tabstop", 2 },
+  { "cmdheight", 2 },
+  { "scrolloff", 8 },
+  { "shiftwidth", 2 },
+  { "pumheight", 10 },
+  { "showtabline", 2 },
+  { "numberwidth", 4 },
+  { "conceallevel", 0 },
+  { "timeoutlen", 100 },
+  { "updatetime", 300 },
+  { "sidescrolloff", 8 },
+
+  { "mouse", "a" },
+  { "signcolumn", "yes" },
+  { "fileencoding", "utf-8" },
+  { "clipboard", "unnamedplus" },
+  { "completeopt", { "menuone", "noselect" } },
+}
+
 M.setup = function()
-  opt("wrap", false)
-  opt("mouse", "a")
-  opt("number", true)
-  opt("backup", false)
-  opt("hlsearch", true)
-  opt("undofile", true)
-  opt("swapfile", false)
-  opt("showmode", false)
-  opt("expandtab", true)
-  opt("smartcase", true)
-  opt("cursorline", true)
-  opt("splitbelow", true)
-  opt("ignorecase", true)
-  opt("splitright", true)
-  opt("smartindent", true)
-  opt("writebackup", false)
-  opt("relativenumber", true)
-
-  opt("tabstop", 2)
-  opt("cmdheight", 2)
-  opt("scrolloff", 8)
-  opt("shiftwidth", 2)
-  opt("pumheight", 10)
-  opt("showtabline", 2)
-  opt("numberwidth", 4)
-  opt("conceallevel", 0)
-  opt("timeoutlen", 100)
-  opt("updatetime", 300)
-  opt("sidescrolloff", 8)
-
-  opt("signcolumn", "yes")
-  opt("fileencoding", "utf-8")
-  opt("clipboard", "unnamedplus")
-  opt("completeopt", { "menuone", "noselect" })
+  for _, v in pairs(M.options) do
+    vim.opt[v[1]] = v[2]
+  end
 end
 
 return M
