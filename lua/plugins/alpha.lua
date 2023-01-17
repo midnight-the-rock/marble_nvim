@@ -21,8 +21,8 @@ dashboard.section.header.val =
 -- menu navigation buttons
 dashboard.section.buttons.val =
 {
-	dashboard.button("1", "[] search", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{ previewer = false }); print('find files')<CR>"),
-	dashboard.button("2", "[﬚] recent", ":lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown{ previewer = false }); print('old files')<CR>"),
+	dashboard.button("1", "[] search", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{ previewer = false }); print('> search file...')<CR>"),
+	dashboard.button("2", "[﬚] recent", ":lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown{ previewer = false }); print('> recent files...')<CR>"),
 	dashboard.button("3", "[] create", ":ene <BAR> startinsert<CR>"),
 	dashboard.button("4", "[] leave", ":qa<CR>"),
 }
