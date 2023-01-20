@@ -37,8 +37,8 @@ local keys =
   { "i", "jf", "<ESC>" },
   { "v", "jf", "<ESC>" },
   { "v", "fj", "<ESC>" },
-  { "t", "fj", "exit<CR>" },
-  { "t", "jf", "exit<CR>" },
+  { "t", "fj", "<C-u>exit<CR>" },
+  { "t", "jf", "<C-u>exit<CR>" },
 
   -- indentation
   { "v", "<", "<gv" },
