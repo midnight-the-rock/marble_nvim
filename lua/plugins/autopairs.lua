@@ -1,9 +1,9 @@
-local ok, npairs = pcall(require, "nvim-autopairs")
+local ok, auto_pairs = pcall(require, "nvim-autopairs")
 if not ok then
   return 0
 end
 
-npairs.setup {
+auto_pairs.setup {
   check_ts = true,
   ts_config = {
     lua = { "string", "source" },
