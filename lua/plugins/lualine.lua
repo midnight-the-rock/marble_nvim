@@ -5,44 +5,64 @@ end
 
 local M = {}
 
-local branch = { "branch", icon = "", icons_enabled = true }
-local diff = { "diff", colored = false, symbols = { added = " ", modified = " ", removed = " " } }
-
-local diagnostics =
-{
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " " },
-  sections = { "error", "warn" },
-	colored = false,
-	always_visible = true,
-	update_in_insert = false,
+local branch = {
+  "branch",
+  icon = "",
+  colored = true,
+  icons_enabled = true
 }
 
-local mode =
-{
+local diff = {
+  "diff",
+  colored = true,
+  symbols = {
+    added     = " ",
+    removed   = " ",
+    modified  = " ",
+  },
+}
+
+local diagnostics = {
+ "diagnostics",
+
+  separator = {
+    left  = " ",
+    right = " ",
+  },
+
+  sources = { "nvim_diagnostic" },
+
+  symbols = {
+    warn  = " ",
+    error = " ",
+  },
+
+  sections = {
+    "error",
+    "warn",
+  },
+
+  colored = false,
+  always_visible = true,
+  update_in_insert = false,
+}
+
+local mode = {
   "mode",
+  separator = {
+    left  = " ",
+    right = " ",
+  },
   fmt = function(str)
     return "  " .. str .. " "
   end,
 }
 
 local progress = function()
-  local l = vim.fn.line(".") / vim.fn.line("$")
-  local c =
-  {
-    " ◼        ",
-    " ◼◼       ",
-    " ◼◼◼      ",
-    " ◼◼◼◼     ",
-    " ◼◼◼◼◼    ",
-    " ◼◼◼◼◼◼   ",
-    " ◼◼◼◼◼◼◼  ",
-    " ◼◼◼◼◼◼◼◼ ",
-    " ◼◼◼◼◼◼◼◼◼"
-  }
-  local i = math.ceil(l * #c)
-  return c[i]
+  local total_lines   = vim.fn.line("$")
+  local current_line  = vim.fn.line(".")
+
+  return "󰟀 "..math.floor(current_line/total_lines*100).."󰏰"
 end
 
 M.options =
@@ -52,23 +72,30 @@ M.options =
   globalstatus = true,
   icons_enabled = true,
   always_divide_middle = true,
-  section_separators = { left = '▙ ', right = ' ▟'},
-  component_separators = { left = '┃', right = '┃'},
+  section_separators = { left = ' ', right = ' '},
+  component_separators = '│',
   refresh = { statusline = 1000, tabline = 1000, winbar = 1000 },
-  disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", statusline = {}, winbar = {}, },
+
+  disabled_filetypes = {
+    "alpha",
+    "Outline",
+    "NvimTree",
+    "dashboard",
+    winbar = {},
+    statusline = {},
+  },
 }
 
-M.sections = 
-{
+M.sections = {
   lualine_a = { mode },
-  lualine_b = { branch },
+  lualine_b = { 'filetype', progress },
   lualine_c = {},
-  lualine_x = { diff, diagnostics },
+  lualine_x = { diff, branch },
   lualine_y = {},
-  lualine_z = { progress }
+  lualine_z = { diagnostics }
 }
 
-M.inactive_sections = 
+M.inactive_sections =
 {
   lualine_a = {},
   lualine_b = {},
@@ -78,9 +105,9 @@ M.inactive_sections =
   lualine_z = {}
 }
 
-M.tabline = {}
 M.winbar = {}
-M.inactive_winbar = {}
+M.tabline = {}
 M.extensions = {}
+M.inactive_winbar = {}
 
 return lualine.setup(M)

@@ -45,6 +45,7 @@ return packer.startup({
    -- useful plugins
     use { 'elkowar/yuck.vim' }                    -- eww sintax hl
     use { 'goolord/alpha-nvim' }                  -- menu
+    use { 'tikhomirov/vim-glsl' }                 -- glsl sintax hl
     use { 'nvim-lua/plenary.nvim' }               -- file tree
     use { 'windwp/nvim-autopairs' }               -- auto pairs
     use { 'wbthomason/packer.nvim' }              -- plugin manager
@@ -57,7 +58,7 @@ return packer.startup({
     use { 'kyazdani42/nvim-web-devicons' }        -- dev icons
     use { 'nvim-telescope/telescope.nvim' }       -- fuzzy finder
     use { 'nvim-treesitter/nvim-treesitter' }     -- parser generator
-    use { 'TheMidnightShow/starry_night.nvim' }   -- colorscheme
+    --use { 'TheMidnightShow/starry_night.nvim' }   -- colorscheme
     use { 'lukas-reineke/indent-blankline.nvim' } -- indentation
 
     -- sync packer whenever this file gets updated 

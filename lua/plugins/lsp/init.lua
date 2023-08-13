@@ -12,7 +12,8 @@ local M = {}
 M.servers =
 {
   "clangd",
-  "sumneko_lua"
+  "asm_lsp",
+  "sumneko_lua",
 }
 
 M.setup = function()

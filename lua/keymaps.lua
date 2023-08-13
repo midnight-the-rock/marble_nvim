@@ -1,8 +1,8 @@
 local map = vim.api.nvim_set_keymap
 local conf = { noremap = true, silent = true }
 
-local keys =
-{
+local keys = {
+
   -- file manipulation
   { "n", "<C-s>", ":w!<CR>" },
   { "n", "<C-p>", ":q!<CR>" },
@@ -19,7 +19,7 @@ local keys =
   { "n", "<C-l>", "<C-w>l" },
 
   -- window splitting
-  { "n", "<C-v>", "<C-w>v" },
+  { "n", "<C-v>",   "<C-w>v" },
   { "n", "<C-b>", "<C-w>s" },
 
   -- window resize
@@ -35,8 +35,8 @@ local keys =
   -- quick mode exit 
   { "i", "fj", "<ESC>" },
   { "i", "jf", "<ESC>" },
-  { "v", "jf", "<ESC>" },
   { "v", "fj", "<ESC>" },
+  { "v", "jf", "<ESC>" },
   { "t", "fj", "<C-u>exit<CR>" },
   { "t", "jf", "<C-u>exit<CR>" },
 

@@ -12,14 +12,14 @@ local M = {}
 
 local icon_kind =
 {
-  Text =          "", Unit =          "", Enum =          "",
-  File =          "", Color =         "", Value =         "",
-  Event =         "", Class =         "", Struct =        "",
-  Method =        "", Folder =        "", Module =        "",
-  Keyword =       "", Snippet =       "", Variable =      "",
-  Function =      "", Operator =      "", Constant =      "",
-  Property =      "", Reference =     "", Interface =     "",
-  EnumMember =    "", Constructor =   "", TypeParameter = "",
+  Text =          " ", Unit =          " ", Enum =          " ",
+  File =          " ", Color =         " ", Value =         " ",
+  Event =         " ", Class =         "󰮄 ", Struct =        "󰮄 ",
+  Method =        "󰘧 ", Folder =        "󰉋 ", Module =        "󰋙 ",
+  Keyword =       " ", Snippet =       " ", Variable =      "󰙨 ",
+  Function =      "󰘧 ", Operator =      " ", Constant =      " ",
+  Property =      " ", Reference =     "󰪍 ", Interface =     " ",
+  EnumMember =    " ", Constructor =   " ", TypeParameter = " ",
 }
 
 M.snippet =
@@ -54,10 +54,10 @@ M.formatting =
   format = function(entry, vim_item)
     vim_item.menu =
     ({
-      path = "[pth]",
-      buffer = "[buf]",
-      luasnip = "[snip]",
-      nvim_lsp = "[lsp]",
+      path      = "[pth]",
+      buffer    = "[buf]",
+      luasnip   = "[snp]",
+      nvim_lsp  = "[lsp]",
     })[entry.source.name]
     vim_item.kind = string.format("%s", icon_kind[vim_item.kind])
     return vim_item
@@ -66,10 +66,10 @@ M.formatting =
 
 M.sources =
 {
-  { name = "nvim_lsp" },
-  { name = "luasnip" },
+  { name = "path" },
   { name = "buffer" },
-  { name = "path" }
+  { name = "luasnip" },
+  { name = "nvim_lsp" },
 }
 
 M.confirm_opts =

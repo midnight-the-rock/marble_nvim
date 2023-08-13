@@ -3,15 +3,9 @@ if not ok then
 	return
 end
 
-configs.setup({
-	ensure_installed = "all", -- one of "all" or a list of languages
-	ignore_install = { "" }, -- List of parsers to ignore installing
-	highlight = {
-		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
-	},
-	autopairs = {
-		enable = true,
-	},
-	indent = { enable = false, disable = { "python", "css" } },
-})
+local M = {}
+
+M.highlight = { enable = true, }
+M.sync_install = true
+
+configs.setup(M)

@@ -8,27 +8,33 @@ local _, dashboard = pcall(require,"alpha.themes.dashboard")
 -- menu title
 dashboard.section.header.val =
 {
-	[[                                     ]],
-	[[                                     ]],
-	[[   ██ ███   ███ ▀▀▀                ██]],
-	[[  ██  ███   ███ ███ ███████████   ██ ]],
-	[[ ██    ███  ███ ███ ███ ███ ███  ██  ]],
-	[[██      ██████   ██ ███  ██  ██ ██   ]],
-	[[                                     ]],
-	[[                                     ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[    ██ ███   ███ ▀▀▀                ██]],
+	[[   ██  ███   ███ ███ ███████████   ██ ]],
+	[[  ██    ███  ███ ███ ███ ███ ███  ██  ]],
+	[[ ██      ██████   ██ ███  ██  ██ ██   ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[                                      ]],
+	[[                                      ]],
 }
 
 -- menu navigation buttons
 dashboard.section.buttons.val =
 {
-	dashboard.button("1", "[] search", ":lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{ previewer = false }); print('> search file...')<CR>"),
-	dashboard.button("2", "[﬚] recent", ":lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown{ previewer = false }); print('> recent files...')<CR>"),
-	dashboard.button("3", "[] create", ":ene <BAR> startinsert<CR>"),
-	dashboard.button("4", "[] leave", ":qa<CR>"),
+	dashboard.button("1", " | look up", ":lua require('telescope.builtin').find_files(); print('> look up...')<CR>"),
+	dashboard.button("2", " | recent", ":lua require('telescope.builtin').oldfiles(); print('> recent files...')<CR>"),
+	dashboard.button("3", " | create", ":ene <BAR> startinsert<CR>"),
+	dashboard.button("4", "󰀚 | leave ", ":qa<CR>"),
 }
 
 -- menu footer 
-dashboard.section.footer.val = "#include <midnight>"
+dashboard.section.footer.val = "std::midnight neovim;"
 
 -- menu colors
 dashboard.section.header.opts.hl =  "Float"

@@ -1,5 +1,5 @@
 -- load an alernative background 
-local ok = pcall(vim.cmd, 'colorscheme starry_nebula')
+local ok = pcall(vim.cmd, 'colorscheme marble_dark')
 if not ok then
   vim.cmd[[ colorscheme industry ]]
 end
