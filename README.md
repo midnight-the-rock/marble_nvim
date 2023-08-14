@@ -1,27 +1,23 @@
-# starry.nvim
+# Marble Nvim
 
-## [📔] about
-starry.nvim is a neovim template, offers the basics for a cozy and solid developing experience, which can be improved building on top of it
+Marble is a custom Neo Vim configuration made for me to understand better how my editor works and have it tweaked to the very core.
 
-## [⚙] features
-- ready to go auto-completion and diagnostics
-- easy to build on top of it
-- pre set keys for easier navigation
-- custom colorscheme with dark and light modes
+It is mostly oriented to my C++ workflow, so there is no much going on apart from that.
 
-## [📦] installation
+I have also designed the marble colorscheme this editor uses (I was also curious about creating my own colorscheme)
 
-#### copy and run the installation script
+# Installation
+
+Marble Nvim includes a custom installation script that you can use for easy cloning and installation.
+
+Contact me if there is any errors with the intended use of this script.
+
 ```sh
-bash <(curl -S https://raw.githubusercontent.com/TheMidnightShow/starry.nvim/master/install.sh) 
+bash <(curl -S https://raw.githubusercontent.com/TheMidnightShow/starry.nvim/master/install.sh)
 ```
 
-## [📺] preview
+# Preview 
 
-### starry_nebula theme
-![nebula_m](showcase/starry_nebula_menu.png)
-![nebula_e](showcase/starry_nebula_code.png)
+![](https://media.discordapp.net/attachments/635625917623828520/1140432616609296584/2023-08-13-173913_1605x874_scrot.png?width=1210&height=658)
 
-### starry_nova theme
-![nova_m](showcase/starry_nova_menu.png)
-![nova_e](showcase/starry_nova_code.png)
+![](https://media.discordapp.net/attachments/635625917623828520/1140432616865140746/2023-08-13-173849_1605x874_scrot.png?width=1210&height=658)
