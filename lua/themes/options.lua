@@ -342,21 +342,95 @@ M.options = function(c)
     { "LirEmptyDirText", { fg = c.hint, bg = "NONE", italic = true } },
 
     -- Buffer
-    { "BufferCurrent", { fg = c.bg, bg = c.preproc } },
-    { "BufferCurrentIndex", { fg = c.info, bg = c.bg } },
-    { "BufferCurrentMod", { fg = c.info, bg = c.bg } },
-    { "BufferCurrentSign", { fg = c.var, bg = c.bg } },
-    { "BufferCurrentTarget", { fg = c.err, bg = c.bg, bold = true } },
-    { "BufferVisible", { fg = c.info, bg = c.bg } },
-    { "BufferVisibleIndex", { fg = c.info, bg = c.bg } },
-    { "BufferVisibleMod", { fg = c.info, bg = c.bg } },
-    { "BufferVisibleSign", { fg = c.hint, bg = c.bg } },
-    { "BufferVisibleTarget", { fg = c.err, bg = c.bg, bold = true } },
-    { "BufferInactive", { fg = c.hint, bg = c.alt } },
-    { "BufferInactiveIndex", { fg = c.hint, bg = c.alt } },
-    { "BufferInactiveMod", { fg = c.info, bg = c.alt } },
-    { "BufferInactiveSign", { fg = c.hint, bg = c.alt } },
-    { "BufferInactiveTarget", { fg = c.err, bg = c.alt, bold = true } },
+   -- { "BufferCurrent", { fg = c.err, bg = c.bg } },
+   -- { "BufferCurrentIndex", { fg = c.info, bg = c.bg } },
+   -- { "BufferCurrentMod", { fg = c.info, bg = c.bg } },
+   -- { "BufferCurrentSign", { fg = c.var, bg = c.bg } },
+   -- { "BufferCurrentTarget", { fg = c.err, bg = c.bg, bold = true } },
+   -- { "BufferVisible", { fg = c.info, bg = c.bg } },
+   -- { "BufferVisibleIndex", { fg = c.info, bg = c.bg } },
+   -- { "BufferVisibleMod", { fg = c.info, bg = c.bg } },
+   -- { "BufferVisibleSign", { fg = c.hint, bg = c.bg } },
+   -- { "BufferVisibleTarget", { fg = c.err, bg = c.bg, bold = true } },
+   -- { "BufferInactive", { fg = c.hint, bg = c.alt } },
+   -- { "BufferInactiveIndex", { fg = c.hint, bg = c.alt } },
+   -- { "BufferInactiveMod", { fg = c.info, bg = c.alt } },
+   -- { "BufferInactiveSign", { fg = c.hint, bg = c.alt } },
+   -- { "BufferInactiveTarget", { fg = c.err, bg = c.alt, bold = true } },
+
+    -- Bufferline
+
+    { "BufferLineHint",                     { fg = c.preproc, bg = c.bg } },
+    { "BufferLineHintVisible",              { fg = c.preproc, bg = c.bg } },
+    { "BufferLineHintSelected",             { fg = c.preproc, bg = c.bg } },
+    { "BufferLineHintDiagnostic",           { fg = c.preproc, bg = c.bg } },
+    { "BufferLineHintDiagnosticSelected",   { fg = c.preproc, bg = c.bg } },
+    { "BufferLineHintDiagnosticVisible",    { fg = c.preproc, bg = c.bg } },
+
+    { "BufferLineDiagnostic",               { fg = c.fg, bg = c.bg } },
+    { "BufferLineDiagnosticSelected",       { fg = c.fg, bg = c.bg } },
+    { "BufferLineDiagnosticVisible",        { fg = c.fg, bg = c.bg } },
+
+    { "BufferLineNumbers",                  { fg = c.bg, bg = c.preproc } },
+    { "BufferLineNumbersSelected",          { fg = c.bg, bg = c.preproc } },
+    { "BufferLineNumbersVisible",           { fg = c.bg, bg = c.preproc } },
+
+    { "BufferLineBuffer",                   { fg = c.fg, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineBufferSelected",           { fg = c.fg, bg = c.bg, bold = true } },
+    { "BufferLineBufferVisible",            { fg = c.fg, bg = c.bg, bold = true } },
+
+    { "BufferLineCloseButton",              { fg = c.fg, bg = c.bg } },
+    { "BufferLineCloseButtonVisible",       { fg = c.fg, bg = c.bg } },
+    { "BufferLineCloseButtonSelected",      { fg = c.fg, bg = c.bg } },
+
+    { "BufferLineTab",                      { fg = c.preproc, bg = c.bg } },
+    { "BufferLineTabClose",                 { fg = c.preproc, bg = c.bg } },
+    { "BufferLineTabSelected",              { fg = c.preproc, bg = c.bg } },
+
+    { "BufferLineTabSeparator",             { fg = c.bg, bg = c.alt } },
+    { "BufferLineTabSeparatorSelected",     { fg = c.bg, bg = c.alt } },
+
+    { "BufferLineGroupLabel",               { fg = c.preproc, bg = c.bg } },
+    { "BufferLineGroupSeparator",           { fg = c.preproc, bg = c.bg } },
+
+    { "BufferLineFill",                     { fg = c.preproc, bg = c.alt } },
+
+    { "BufferLineTruncMaker",               { fg = c.preproc, bg = c.bg } },
+
+    { "BufferLineSeparator",                { fg = c.bg, bg = c.alt } },
+    { "BufferLineBackground",               { fg = c.preproc, bg = c.bg } },
+    { "BufferLineOffsetSeparator",          { fg = c.preproc, bg = c.bg } },
+
+    { "BufferLinePickVisible",              { fg = c.bg, bg = c.preproc } },
+    { "BufferLinePickSelected",             { fg = c.bg, bg = c.preproc } },
+
+    { "BufferLineIndicatorVisible",         { fg = c.bg, bg = c.bg } },
+    { "BufferLineIndicatorSelected",        { fg = c.bg, bg = c.bg } },
+
+    { "BufferLineDuplicate",                { fg = c.bg, bg = c.bg } },
+    { "BufferLineDuplicateVisible",         { fg = c.bg, bg = c.bg } },
+    { "BufferLineDuplicateSelected",        { fg = c.bg, bg = c.bg } },
+
+    { "BufferLineModified",                 { fg = c.fg, bg = c.bg } },
+    { "BufferLineModifiedSelected",         { fg = c.fg, bg = c.bg } },
+    { "BufferLineModifiedVisible",          { fg = c.fg, bg = c.bg } },
+
+    { "BufferLineError",                    { fg = c.err, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineErrorVisible",             { fg = c.err, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineErrorSelected",            { fg = c.err, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineErrorDiagnostic",          { fg = c.err, bg = c.bg, bold = true, italic = true } },
+
+    { "BufferLineWarning",                  { fg = c.warn, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineWarningVisible",           { fg = c.warn, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineWarningSelected",          { fg = c.warn, bg = c.bg, bold = true, italic = true } },
+    { "BufferLineWarningDiagnostic",        { fg = c.warn, bg = c.bg, bold = true, italic = true } },
+
+    { "BufferLineInfo",                     { fg = c.preproc, bg = c.bg, bold = true } },
+    { "BufferLineInfoVisible",              { fg = c.preproc, bg = c.bg } },
+    { "BufferLineInfoSelected",             { fg = c.preproc, bg = c.bg } },
+    { "BufferLineInfoDiagnostic",           { fg = c.preproc, bg = c.bg } },
+    { "BufferLineInfoDiagnosticVisible",    { fg = c.bg, bg = c.preproc } },
+    { "BufferLineInfoDiagnosticSelected",   { fg = c.bg, bg = c.preproc } },
 
     -- StatusLine
     { "StatusLine", { fg = c.fg, bg = c.bg } },

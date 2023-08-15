@@ -3,49 +3,41 @@
 install()
 {
   clear
-  echo -e "\n========================================================"
-  echo -e "installing starry.nvim at ~/.config/nvim"
-  echo -e "========================================================\n"
+  echo ""
+  echo -e "   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+  echo -e "   ┃                                                      ┃"
+  echo -e "   ┃            installing at ~/.config/nvim              ┃"
+  echo -e "   ┃                                                      ┃"
+  echo -e "   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+  echo ""
 
-  # check for older nvim configs
+  # move old nvim config into home directory (just in case)
   if [ -e ~/.config/nvim ]; then
     mv ~/.config/nvim ~/nvim-old
   fi
 
-  # install starry template 
+  # clone marble nvim 
   git clone --depth 1 https://github.com/TheMidnightShow/starry.nvim\
    ~/.config/nvim
   sleep 0.5s
 
   clear
-
-  echo -e "\n========================================================"
-  echo -e "starry.nvim installed!"
-  echo -e "========================================================\n"
-}
-
-aborted()
-{
-  clear
-  echo -e "\n========================================================"
-  echo -e "installation aborted!"
-  echo -e "========================================================\n"
-  sleep 0.5s
+  echo ""
+  echo -e "   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+  echo -e "   ┃                                                      ┃"
+  echo -e "   ┃           Marble Nvim has been installed             ┃" 
+  echo -e "   ┃                                                      ┃"
+  echo -e "   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+  echo -e "\n   have a good day :)"
 }
 
 clear 
-
 echo ""
-echo "██████ ██                              [nvim]"
-echo "██     ███ ████ ██ ██ ███ ██ ███ ██  ██"
-echo "    ██ ██  ██  ███ ███ ██ ███ ██ ██  ██"
-echo "██████ ███ ████ ██ ██     ██     ██████"
-echo "                                    ██"
+echo -e "   ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓"
+echo -e "   ┃                                                      ┃"
+echo -e "   ┃                Welcome to Marble_Nvim                ┃"
+echo -e "   ┃                                                      ┃"
+echo -e "   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"
+echo -e "\n   press enter to continue. . ."; read
 
-echo -e "\nproceed with installation? [y/n]: "; read IN
-
-if [ $IN == "n" ] || [ $IN == "no" ]; then
-  aborted 
-else
-  install
-fi
+install

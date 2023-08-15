@@ -9,6 +9,7 @@ M.options =
 {
   mode = "buffers",
   numbers = "none",
+  themeable = true,
   middle_mouse_command = nil,
   close_command = "bdelete! %d",
   left_mouse_command = "buffer %d",
@@ -43,8 +44,8 @@ M.options =
   show_tab_indicators = true,
   show_duplicate_prefix = true,
   persist_buffer_sort = true,
-  separator_style = "thin",
-  enforce_regular_tabs = false,
+  separator_style = { ' ', ' ' },
+  enforce_regular_tabs = true,
   always_show_bufferline = true,
   hover = { enabled = true, delay = 200, reveal = {'close'} },
   sort_by = 'insert_at_end',

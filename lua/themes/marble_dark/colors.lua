@@ -1,8 +1,9 @@
 return {
   -- code highlighting
-  bg          = "#131313",
+
+  bg          = "#262026",
   fg          = "#dbd7d2",
-  alt         = "#262026",
+  alt         = "#1e191e",
   num         = "#7c94ac",
   str         = "#6f7789",
   var         = "#c3c8d1",
